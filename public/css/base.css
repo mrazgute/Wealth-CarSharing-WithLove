@@ -10,7 +10,7 @@ Tinder Template by Miami
 }
 .tbgwrap { padding: 10px; position: relative; }
 .theader { height: 65px; border-bottom: 1px solid #c0c0c0; }
-.theader i.fa-comments {
+.theader i.fa-align-justify {
     color: #c0c0c0;
     font-size: 40px;
     display: inline-block;
@@ -26,8 +26,10 @@ Tinder Template by Miami
     padding: 10px 20px;
     position: relative;
 }
-.tlogo { width: 100px; margin: 0 auto; padding: 10px; }
-.tlogo img { width: 100px; }
+.tlogo { width: 150px;
+    margin: 0 auto;
+    padding: 20px; }
+.tlogo img {     width: 150px; }
 .tphoto {
     width: 350px;
     height: 350px;
