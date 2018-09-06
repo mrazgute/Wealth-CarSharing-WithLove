@@ -12,11 +12,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter history={history}>
-      <div class="tbg">
-      <div class="theader">
-        <i class="fa fa-cog" aria-hidden="true"></i>
-        <i class="fa fa-comments" aria-hidden="true"></i>
-        <div class="tlogo">
+      <div className="tbg">
+      <div className="theader">
+        <i className="fa fa-cog" aria-hidden="true"></i>
+        <i className="fa fa-comments" aria-hidden="true"></i>
+        <div className="tlogo">
           <img src="https://worldvectorlogo.com/logos/tinder-1.svg" alt="Tinder Logo" title="Tinder Logo" />
         </div>
       </div>
