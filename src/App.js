@@ -4,6 +4,8 @@ import RoleSelection from './screens/RoleSelection';
 import logo from './logo.svg';
 import './App.css';
 
+import Signup from './screens/Signup';
+
 class App extends Component {
   render() {
     return (
@@ -15,7 +17,7 @@ class App extends Component {
         </header>
         <Switch>
           {/* Users sign up here*/}
-          <Route exact path="/signup" render={() => <div>Users sign up here</div>}/>
+          <Route exact path="/signup" render={() => <Signup />}/>
           {/* Users select roles here*/}
           <Route exact path="/role-selection" component={RoleSelection}/>
           {/* driver enters details and waits here (also gets match notification here): */}
