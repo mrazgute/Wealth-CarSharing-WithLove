@@ -34,8 +34,8 @@ class MatchingScreen extends Component {
             <div className="tbgwrap">
                 <div className="tphoto">
                   {localStorage.getItem('role') === 'passenger' ?
-                    <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" /> :
-                    <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" />
+                    <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%" /> :
+                    <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%"/>
                   }
                 </div>
                 <div className="tinfo">
