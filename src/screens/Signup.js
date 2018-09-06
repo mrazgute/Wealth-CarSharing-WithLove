@@ -23,8 +23,6 @@ class Signup extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(event.target);
-
     fetch('http://localhost:5000/login', {
       method: 'POST',
       body: JSON.stringify(this.state),

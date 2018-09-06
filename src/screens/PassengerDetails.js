@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/login.css';
 
-class DriverDetails extends Component {
+class PassengerDetails extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,4 +43,4 @@ class DriverDetails extends Component {
   }
 }
 
-export default DriverDetails;
+export default PassengerDetails;
