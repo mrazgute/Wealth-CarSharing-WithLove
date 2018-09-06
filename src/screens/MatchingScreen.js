@@ -13,10 +13,12 @@ class MatchingScreen extends Component {
           localStorage.setItem('drivers', JSON.stringify(drivers));
           this.props.history.push('/waiting');
         }
-        console.log(answer);
     };
 
     render() {
+        const drivers = JSON.parse(localStorage.getItem('drivers'));
+        console.log('drivers', drivers);
+        if (drivers.length) {
         return <React.Fragment>
             <div className="tbgwrap">
                 <div className="tphoto">
@@ -32,7 +34,7 @@ class MatchingScreen extends Component {
 
                 <div className="tcontrols">
                     <div className="tno" onClick={()=>this.handleSelection('NO')}>
-                        <img src="/assets/y.PNG" className="ynincon" />
+                        <img src="/assets/n.PNG" className="ynincon" />
                     </div>
 
                     <div className="tyes" onClick={()=>this.handleSelection('YES')}>
@@ -41,6 +43,9 @@ class MatchingScreen extends Component {
                 </div>
             </div>
         </React.Fragment>;
+       } else {
+        return  <React.Fragment>No more matches</React.Fragment>
+        }
     }
 }
 

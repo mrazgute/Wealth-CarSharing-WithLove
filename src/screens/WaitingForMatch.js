@@ -15,7 +15,9 @@ class WaitingForMatch extends Component {
       this.timer = setInterval(()=> this.getStatus(), 1000);
     }
     if(localStorage.getItem('role') === 'passenger') {
-      if (!JSON.parse(localStorage.getItem('drivers'))) {
+      const drivers = JSON.parse(localStorage.getItem('drivers'));
+      console.log('drivers', drivers);
+      if (!drivers || !drivers.length ) {
         fetch(`http://localhost:5000/drivers`, {
           method: 'GET',
         }).then(res => res.json())
@@ -29,7 +31,7 @@ class WaitingForMatch extends Component {
       } else {
         setTimeout(() => {
           this.props.history.push('/matching-screen/0');
-        }, 3000);
+        }, 10000);
       }
     }
   }
@@ -53,7 +55,7 @@ class WaitingForMatch extends Component {
   }
 
   render() {
-    return <div>LOADING YO</div>;
+    return (<div className="tbg"><div className="tbgwrap" >{loader()}</div></div>);
   }
 }
 
