@@ -44,7 +44,7 @@ class App extends Component {
 
             <Route exact path="/waiting" component={WaitingForMatch} />
 
-            <Route exact path="/matching-screen" component={MatchingScreen} />
+            <Route exact path="/matching-screen/:id" component={MatchingScreen} />
             {/* list of trips matched: */}
             <Route exact path="/trips" component={Trips} />
           </AnimatedSwitch>

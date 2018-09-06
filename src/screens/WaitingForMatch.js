@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
 
-const FIRST_DRIVER_SHOWN = 'firstDriverShown';
-
 class WaitingForMatch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      drivers: null,
-      firstDriverShown: null
+      drivers: null
     };
   }
 
   componentDidMount() {
-    // this.timer = setInterval(()=> this.getStatus(), 1000);
     if(localStorage.getItem('role') === 'driver') {
       this.timer = setInterval(()=> this.getStatus(), 1000);
     }
     if(localStorage.getItem('role') === 'passenger') {
-      // setTimeout(function(){ alert("Hello"); }, 3000);
-      fetch(`http://localhost:5000/drivers`, {
-        method: 'GET',
-        // headers: {
-        //   "Content-Type": "application/json; charset=utf-8",
-        // }
-      }).then(res => res.json())
-        .then(drivers => {
-        console.log('drivers: ', drivers);
-          this.setState({ drivers: drivers });
-        // this.props.history.push('/role-selection');
-      }).catch(e => {
-        console.log('error: ', e);
-        // this.props.history.push('/role-selection');
-      });
+      if (!JSON.parse(localStorage.getItem('drivers'))) {
+        fetch(`http://localhost:5000/drivers`, {
+          method: 'GET',
+        }).then(res => res.json())
+          .then(drivers => {
+            localStorage.setItem('drivers', JSON.stringify(drivers));
+
+            this.props.history.push(`/matching-screen/0`);
+          }).catch(e => {
+          console.log('error: ', e);
+        });
+      } else {
+        setTimeout(() => {
+          this.props.history.push('/matching-screen/0');
+        }, 3000);
+      }
     }
   }
 
@@ -47,7 +44,6 @@ class WaitingForMatch extends Component {
       method: 'GET',
     }).then((res) => {
       console.log('matches: ', res);
-      // this.props.history.push('/role-selection');
     }).catch(e => {
       console.log('error: ', e);
       this.props.history.push('/role-selection');
@@ -55,13 +51,6 @@ class WaitingForMatch extends Component {
   }
 
   render() {
-    if(!localStorage.getItem(FIRST_DRIVER_SHOWN) && this.state.drivers) {
-      localStorage.setItem(FIRST_DRIVER_SHOWN, true);
-      return <div>{JSON.stringify(this.state.drivers[0].name)}</div>;
-    }
-    if(localStorage.getItem(FIRST_DRIVER_SHOWN) && this.state.drivers) {
-      return <div>{JSON.stringify(this.state.drivers[1].name)}</div>;
-    }
     return <div>LOADING YO</div>;
   }
 }

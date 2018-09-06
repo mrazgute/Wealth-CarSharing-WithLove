@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 
-class DriverDetails extends Component {
+class MatchingScreen extends Component {
     constructor(props) {
         super(props);
         this.handleSelection = this.handleSelection.bind(this);
     }
 
     handleSelection = (answer) => {
+        if(answer === 'NO') {
+          const drivers = JSON.parse(localStorage.getItem('drivers'));
+          drivers.shift();
+          localStorage.setItem('drivers', JSON.stringify(drivers));
+          this.props.history.push('/waiting');
+        }
         console.log(answer);
-    }
+    };
 
     render() {
-
         return <React.Fragment>
             <div className="tbgwrap">
                 <div className="tphoto">
@@ -20,6 +25,7 @@ class DriverDetails extends Component {
 
                 </div>
                 <div className="tinfo">
+                    <div>{JSON.parse(localStorage.getItem('drivers'))[0].name}</div>
                     <div>Vieta: <p>Antakalnis</p></div>
                     <div>Laikas: <p>17:30</p></div>
                 </div>
@@ -38,4 +44,4 @@ class DriverDetails extends Component {
     }
 }
 
-export default DriverDetails;
+export default MatchingScreen;
