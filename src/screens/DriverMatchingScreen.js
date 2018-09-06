@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getURL from '../components/getURL';
 
 class DriverMatchingScreen extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class DriverMatchingScreen extends Component {
   handleSelection = (answer) => {
     console.log('driver answered: ', answer);
     if(answer === 'YES') {
-      fetch('http://localhost:5000/match/driver', {
+      // fetch('http://localhost:5000/match/driver', {
+      fetch(`${getURL()}/match/driver`, {
         method: 'GET',
       }).then(() => this.props.history.push('/match'));
     }

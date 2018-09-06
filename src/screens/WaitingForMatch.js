@@ -66,7 +66,8 @@ class WaitingForMatch extends Component {
   }
 
   getPassengerStatus() {
-    fetch(`http://localhost:5000/match/status`, {
+    // fetch(`http://localhost:5000/match/status`, {
+    fetch(`${getUrl()}/match/status`, {
       method: 'GET',
     }).then(res => res.json())
       .then(data => {

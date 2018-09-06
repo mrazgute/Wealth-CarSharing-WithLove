@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getURL from '../components/getURL';
 
 class MatchingScreen extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class MatchingScreen extends Component {
           this.props.history.push('/waiting');
         } else {
             // TODO: say yes to database
-          fetch('http://localhost:5000/match/passenger/', {
+          fetch(`${getURL()}/match/passenger/`, {
             method: 'GET',
           }).then(() => {
               localStorage.setItem('passengerYes', true);
