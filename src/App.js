@@ -4,14 +4,12 @@ import RoleSelection from './screens/RoleSelection';
 import DriverDetails from './screens/DriverDetails';
 import './App.css';
 
-import history from './history';
-
 import Signup from './screens/Signup';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter history={history}>
+      <BrowserRouter>
       <div className="tbg">
       <div className="theader">
         <i className="fa fa-cog" aria-hidden="true"></i>
@@ -22,7 +20,7 @@ class App extends Component {
       </div>
         <Switch>
           {/* Users sign up here*/}
-          <Route exact path="/signup" render={() => <Signup />}/>
+          <Route exact path="/signup" component={Signup}/>
           {/* Users select roles here*/}
           <Route exact path="/role-selection" component={RoleSelection}/>
           {/* driver enters details and waits here (also gets match notification here): */}

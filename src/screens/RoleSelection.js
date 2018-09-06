@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import history from '../history';
 
 class RoleSelection extends Component {
 	constructor(props) {

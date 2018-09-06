@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import '../css/login.css';
 
-import history from '../history';
-
 class Signup extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -14,11 +11,11 @@ class Signup extends Component {
     event.preventDefault();
     const data = new FormData(event.target);
 
-    fetch('/api/form-submit-url', {
+    fetch('/api/login', {
       method: 'POST',
       body: data,
     }).then(() => {
-      history.push('/role-selection');
+      this.props.history.push('/role-selection');
     }).catch(e => {
       console.log('error: ', e);
     });
@@ -40,8 +37,5 @@ class Signup extends Component {
     );
   }
 }
-
-Signup.propTypes = {};
-Signup.defaultProps = {};
 
 export default Signup;
