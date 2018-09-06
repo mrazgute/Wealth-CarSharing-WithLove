@@ -22,7 +22,7 @@ class App extends Component {
       </div>
         <Switch>
           {/* Users sign up here*/}
-          <Route exact path="/signup" render={() => <Signup />}/>
+          <Route exact path="/signup" component={Signup}/>
           {/* Users select roles here*/}
           <Route exact path="/role-selection" component={RoleSelection}/>
           {/* driver enters details and waits here (also gets match notification here): */}
