@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import loader from './../components/loader';
+
 
 class WaitingForMatch extends Component {
   constructor(props) {
