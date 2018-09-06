@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getURL from './../components/getURL';
 
 class RoleSelection extends Component {
 	constructor(props) {
@@ -7,7 +8,7 @@ class RoleSelection extends Component {
 	}
 
 	handleRoleSelection(role) {
-		fetch(`http://localhost:5000/match/${role}/reset/`, {
+		fetch(`${getURL()}/match/${role}/reset/`, {
       		method: 'GET',
 		}).then(res => res.json())
 		.then(matches => {
