@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import history from '../history';
 
 class RoleSelection extends Component {
 	constructor(props) {
@@ -7,15 +8,14 @@ class RoleSelection extends Component {
 	}
 
  	handleRoleSelection = (role) => {
-		 console.log(role);
+		 this.props.history.push(`${role}-details`);
 	} 
 
 	render() {
-
 		return <React.Fragment>
 			<div className="tabs">
-				<button onClick={() =>this.handleRoleSelection('DRIVER')}>Driver</button>
-				<button onClick={() =>this.handleRoleSelection('PASSENGER')}>Passenger</button>
+				<button onClick={() =>this.handleRoleSelection('driver')}>Driver</button>
+				<button onClick={() =>this.handleRoleSelection('passenger')}>Passenger</button>
 			</div>
 		</React.Fragment>;
 	}
