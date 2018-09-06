@@ -33,9 +33,10 @@ class MatchingScreen extends Component {
         return <React.Fragment>
             <div className="tbgwrap">
                 <div className="tphoto">
-
-                    <img src="https://images.unsplash.com/photo-1507019403270-cca502add9f8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=456245a5bd2285aab008f61a9c3ba5ed&auto=format&fit=crop&w=360&q=80" title="tphoto" alt="Tinder Photo" />
-
+                  {localStorage.getItem('role') === 'passenger' ?
+                    <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" /> :
+                    <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" />
+                  }
                 </div>
                 <div className="tinfo">
                     <div>{JSON.parse(localStorage.getItem('drivers'))[0].name}</div>
