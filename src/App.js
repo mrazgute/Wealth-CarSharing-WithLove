@@ -4,14 +4,12 @@ import RoleSelection from './screens/RoleSelection';
 import DriverDetails from './screens/DriverDetails';
 import './App.css';
 
-import history from './history';
-
 import Signup from './screens/Signup';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter history={history}>
+      <BrowserRouter>
       <div className="tbg">
       <div className="theader">
         <i className="fa fa-cog" aria-hidden="true"></i>
