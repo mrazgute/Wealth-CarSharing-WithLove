@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import RoleSelection from './screens/RoleSelection';
 import DriverDetails from './screens/DriverDetails';
-import logo from './logo.svg';
 import './App.css';
+
+import history from './history';
 
 import Signup from './screens/Signup';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter history={history}>
       <div>
         <header >
         </header>
