@@ -85,6 +85,7 @@ Tinder Template by Miami
     top: 50px;
     left: 25px;
     border: 10px solid #f0f0f0;
+    transform: rotate(-20deg);
 }
 .tno i {
     color: #ff695b;
@@ -109,6 +110,8 @@ Tinder Template by Miami
     top: 50px;
     left: 70px;
     border: 10px solid #f0f0f0;
+    
+    transform: rotate(20deg);
 }
 .tyes i {
     color: #5de19c;
@@ -134,83 +137,83 @@ Tinder Template by Miami
     font-style: italic;
 }
 
-.content {
-    height: 50vh;
-  }
-  
-  .pulse {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background: transparent;
-    border: 1px solid #d61f26;
-    border-radius: 50%;
-    -webkit-animation: pulse 1s ease-out 2s infinite;
-            animation: pulse 1s ease-out 2s infinite;
-  }
-  
-  .pulse-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    background: orange;
-    width: 100px;
-    height: 100px;
-    background: #2F3233;
-    border-radius: 50%;
-  }
-  .pulse-center img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  @-webkit-keyframes pulse {
-    0% {
-      width: 100px;
-      height: 100px;
-      background: #d61f26;
-      border: 2px solid #d61f26;
+    .content {
+        height: 50vh;
     }
-    80% {
-      width: 180px;
-      height: 180px;
-      background: #f7cacb;
-      border: 2px solid #d61f26;
+    
+    .pulse {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        border: 1px solid #d61f26;
+        border-radius: 50%;
+        -webkit-animation: pulse 1s ease-out 2s infinite;
+                animation: pulse 1s ease-out 2s infinite;
     }
-    100% {
-      width: 200px;
-      height: 200px;
-      background: transparent;
-      border: 2px solid transparent;
+    
+    .pulse-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        background: orange;
+        width: 100px;
+        height: 100px;
+        background: #2F3233;
+        border-radius: 50%;
     }
-  }
-  
-  @keyframes pulse {
-    0% {
-      width: 100px;
-      height: 100px;
-      background: #d61f26;
+    .pulse-center img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
     }
-    80% {
-      width: 180px;
-      height: 180px;
-      background: #f7cacb;
+    
+    @-webkit-keyframes pulse {
+        0% {
+        width: 100px;
+        height: 100px;
+        background: #d61f26;
+        border: 2px solid #d61f26;
+        }
+        80% {
+        width: 180px;
+        height: 180px;
+        background: #f7cacb;
+        border: 2px solid #d61f26;
+        }
+        100% {
+        width: 200px;
+        height: 200px;
+        background: transparent;
+        border: 2px solid transparent;
+        }
     }
-    100% {
-      width: 200px;
-      height: 200px;
-      background: transparent;
-      border: 2px solid transparent;
+    
+    @keyframes pulse {
+        0% {
+        width: 100px;
+        height: 100px;
+        background: #d61f26;
+        }
+        80% {
+        width: 180px;
+        height: 180px;
+        background: #f7cacb;
+        }
+        100% {
+        width: 200px;
+        height: 200px;
+        background: transparent;
+        border: 2px solid transparent;
+        }
     }
-  }
-  
+    
 
 .route-wrapper {
     position: relative;
