@@ -133,3 +133,12 @@ Tinder Template by Miami
     font-family: 'Helvetica', sans-serif;
     font-style: italic;
 }
+
+.route-wrapper {
+    position: relative;
+  }
+  
+.route-wrapper > div {
+    position: absolute;
+    max-width: 100%;
+}
