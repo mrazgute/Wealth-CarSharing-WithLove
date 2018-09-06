@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import 'login.css';
+import '../css/login.css';
 
 class Signup extends Component {
   constructor() {
