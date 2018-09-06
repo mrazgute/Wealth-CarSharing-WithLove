@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import loader from './../components/loader';
 const FIRST_DRIVER_SHOWN = 'firstDriverShown';
 
 class WaitingForMatch extends Component {
