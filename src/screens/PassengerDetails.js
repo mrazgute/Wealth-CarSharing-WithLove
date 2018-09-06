@@ -23,7 +23,7 @@ class PassengerDetails extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.history.push('/matching-screen');
+    this.props.history.push('/waiting');
   }
 
   render() {

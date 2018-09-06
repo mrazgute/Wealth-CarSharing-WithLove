@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import RoleSelection from './screens/RoleSelection';
 import MatchingScreen from './screens/MatchingScreen';
 import DriverDetails from './screens/DriverDetails';
+import PassengerDetails from './screens/PassengerDetails';
+import WaitingForMatch from './screens/WaitingForMatch';
 import Trips from './screens/Trips';
 
 import './App.css';
@@ -29,7 +31,9 @@ class App extends Component {
             {/* driver enters details and waits here (also gets match notification here): */}
             <Route exact path="/driver-details" component={DriverDetails} />
             {/* passenger enters details and waits here (also gets match notification here): */}
-            <Route exact path="/passenger-details" render={() => <div>passenger enters details and waits here (also gets match notification here)</div>} />
+            <Route exact path="/passenger-details" component={PassengerDetails} />
+
+            <Route exact path="/waiting" component={WaitingForMatch} />
 
             <Route exact path="/matching-screen" component={MatchingScreen} />
             {/* list of trips matched: */}

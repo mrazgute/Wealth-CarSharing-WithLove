@@ -29,7 +29,9 @@ class Login extends Component {
       headers: {
         "Content-Type": "application/json; charset=utf-8",
       }
-    }).then(() => {
+    }).then(response => response.json())
+      .then(data => {
+      localStorage.setItem('userId', data.id);
       this.props.history.push('/role-selection');
     }).catch(e => {
       console.log('error: ', e);

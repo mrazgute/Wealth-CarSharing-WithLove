@@ -6,9 +6,10 @@ class RoleSelection extends Component {
 		this.handleRoleSelection = this.handleRoleSelection.bind(this);
 	}
 
-	handleRoleSelection = (role) => {
-		this.props.history.push(`${role}-details`);
-	}
+	handleRoleSelection(role) {
+    localStorage.setItem('role', role);
+    this.props.history.push(`${role}-details`);
+	};
 
 	render() {
 		return <React.Fragment>
@@ -18,7 +19,7 @@ class RoleSelection extends Component {
 					<div className="selectImageLeft" onClick={()=> this.handleRoleSelection('driver')}>
 						<img src="/assets/driver.jpg" />
 					</div>
-					<div className="selectImage" onClick={()=> this.handleRoleSelection('driver')}>
+					<div className="selectImage" onClick={()=> this.handleRoleSelection('passenger')}>
 						<img src="/assets/passenger.jpg" />
 					</div>
 				</div>
