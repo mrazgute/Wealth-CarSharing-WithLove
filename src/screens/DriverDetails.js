@@ -20,7 +20,7 @@ class DriverDetails extends Component {
                 </div>
 
                 <div className="tcontrols">
-                    <div className="tno"><img src="../assets/y.PNG" className="ynincon" /></div>
+                    <div className="tno"><img src="/assets/y.PNG" className="ynincon" /></div>
 
                     <div className="tyes">
                         <img src="../assets/y.PNG" class="ynincon" />
