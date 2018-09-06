@@ -7,15 +7,22 @@ class RoleSelection extends Component {
 		this.handleRoleSelection = this.handleRoleSelection.bind(this);
 	}
 
- 	handleRoleSelection = (role) => {
-		 this.props.history.push(`${role}-details`);
-	} 
+	handleRoleSelection = (role) => {
+		this.props.history.push(`${role}-details`);
+	}
 
 	render() {
 		return <React.Fragment>
-			<div className="tabs">
-				<button onClick={() =>this.handleRoleSelection('driver')}>Driver</button>
-				<button onClick={() =>this.handleRoleSelection('passenger')}>Passenger</button>
+			<div className="tbgwrap">
+				<center><p>Driver or passenger?</p></center>
+				<div className="selectList">
+					<div className="selectImageLeft" onClick={()=> this.handleRoleSelection('driver')}>
+						<img src="/assets/driver.jpg" />
+					</div>
+					<div className="selectImage" onClick={()=> this.handleRoleSelection('driver')}>
+						<img src="/assets/passenger.jpg" />
+					</div>
+				</div>
 			</div>
 		</React.Fragment>;
 	}

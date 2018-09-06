@@ -29,6 +29,8 @@ class App extends Component {
           <Route exact path="/driver-details" component={DriverDetails}/>
           {/* passenger enters details and waits here (also gets match notification here): */}
           <Route exact path="/passenger-details" render={() => <div>passenger enters details and waits here (also gets match notification here)</div>}/>
+
+          <Route exact path="/matching-screen" render={() => <div>matching screen</div>}/>
           {/* list of trips matched: */}
           <Route exact path="/trips" render={() => <div>list of trips matched</div>}/>
         </Switch>

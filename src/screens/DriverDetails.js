@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 class DriverDetails extends Component {
     constructor(props) {
         super(props);
+        this.handleSelection = this.handleSelection.bind(this);
+    }
+
+    handleSelection = (answer) => {
+        console.log(answer);
     }
 
     render() {
@@ -20,9 +25,11 @@ class DriverDetails extends Component {
                 </div>
 
                 <div className="tcontrols">
-                    <div className="tno"><img src="/assets/y.PNG" className="ynincon" /></div>
+                    <div className="tno" onClick={()=>this.handleSelection('NO')}>
+                        <img src="/assets/y.PNG" className="ynincon" />
+                    </div>
 
-                    <div className="tyes">
+                    <div className="tyes" onClick={()=>this.handleSelection('YES')}>
                         <img src="/assets/y.PNG" className="ynincon" />
                     </div>
                 </div>
