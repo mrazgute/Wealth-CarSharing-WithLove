@@ -27,12 +27,6 @@ class Signup extends Component {
   render() {
     return (
       <div className="tbg">
-        <div className="theader">
-
-          <div className="tlogo">
-            <img src="https://worldvectorlogo.com/logos/tinder-1.svg" alt="Tinder Logo" title="Tinder Logo" />
-          </div>
-        </div>
         <div className="tbgwrap">
           <div className="login">
             <form className="login-container" onSubmit={this.handleSubmit}>
