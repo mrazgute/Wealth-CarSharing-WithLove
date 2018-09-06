@@ -7,7 +7,7 @@ import Trips from './screens/Trips';
 
 import './App.css';
 
-import Signup from './screens/Signup';
+import Login from './screens/Login';
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
           </div>
           <Switch>
             {/* Users sign up here*/}
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/" component={Login} />
             {/* Users select roles here*/}
             <Route exact path="/role-selection" component={RoleSelection} />
             {/* driver enters details and waits here (also gets match notification here): */}
