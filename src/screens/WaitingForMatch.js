@@ -15,8 +15,11 @@ class WaitingForMatch extends Component {
       this.timer = setInterval(()=> this.getStatus(), 1000);
     }
     if(localStorage.getItem('role') === 'passenger') {
+      // TODO: if passenger said yes, they should be polling
+      if(localStorage.getItem('passengerYes')) {
+        this.passengerTimer = setInterval(()=> this.getPassengerStatus(), 1000);
+      }
       const drivers = JSON.parse(localStorage.getItem('drivers'));
-      console.log('drivers', drivers);
       if (!drivers || !drivers.length ) {
         fetch(`http://localhost:5000/drivers`, {
           method: 'GET',
@@ -49,7 +52,6 @@ class WaitingForMatch extends Component {
     }).then(res => res.json())
       .then(matches => {
       console.log('matches: ', matches);
-      // localStorage.setItem('matches', JSON.stringify([{ id: 1, name: 'PASSENGER' }]));
       localStorage.setItem('matches', JSON.stringify(matches));
       console.warn('faking SUCESS scenario: ');
         clearInterval(this.timer);
@@ -58,6 +60,22 @@ class WaitingForMatch extends Component {
         this.props.history.push('/driver-matching-screen');
       }, 3000);
     }).catch(e => {
+      console.log('error: ', e);
+      this.props.history.push('/role-selection');
+    });
+  }
+
+  getPassengerStatus() {
+    fetch(`http://localhost:5000/match/status`, {
+      method: 'GET',
+    }).then(res => res.json())
+      .then(data => {
+        if(data.DRIVER_SAID_YES) {
+          clearInterval(this.passengerTimer);
+          this.passengerTimer = null;
+          this.props.history.push('/match');
+        }
+      }).catch(e => {
       console.log('error: ', e);
       this.props.history.push('/role-selection');
     });

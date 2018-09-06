@@ -12,6 +12,16 @@ class MatchingScreen extends Component {
           drivers.shift();
           localStorage.setItem('drivers', JSON.stringify(drivers));
           this.props.history.push('/waiting');
+        } else {
+            // TODO: say yes to database
+          fetch('http://localhost:5000/match/passenger/', {
+            method: 'GET',
+          }).then(() => {
+              localStorage.setItem('passengerYes', true);
+              return this.props.history.push('/waiting');
+            }).catch(e => {
+            console.log('error: ', e);
+          });
         }
     };
 

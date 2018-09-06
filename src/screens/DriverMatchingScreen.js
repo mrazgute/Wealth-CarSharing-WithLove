@@ -9,7 +9,9 @@ class DriverMatchingScreen extends Component {
   handleSelection = (answer) => {
     console.log('driver answered: ', answer);
     if(answer === 'YES') {
-      this.props.history.push('/match');
+      fetch('http://localhost:5000/match/driver', {
+        method: 'GET',
+      }).then(() => this.props.history.push('/match'));
     }
   };
 

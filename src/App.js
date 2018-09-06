@@ -14,6 +14,10 @@ import Match from './screens/Match';
 
 
 class App extends Component {
+  componentDidMount() {
+    localStorage.clear();
+  }
+
   render() {
     return (
       <BrowserRouter>
