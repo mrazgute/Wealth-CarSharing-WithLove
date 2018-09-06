@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import RoleSelection from './screens/RoleSelection';
 import DriverDetails from './screens/DriverDetails';
+import Trips from './screens/Trips';
+
 import './App.css';
 
 import Signup from './screens/Signup';
@@ -30,7 +32,7 @@ class App extends Component {
 
             <Route exact path="/matching-screen" render={() => <div>matching screen</div>} />
             {/* list of trips matched: */}
-            <Route exact path="/trips" render={() => <div>list of trips matched</div>} />
+            <Route exact path="/trips" component={Trips} />
           </Switch>
         </div>
       </BrowserRouter>
