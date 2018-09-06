@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import RoleSelection from './screens/RoleSelection';
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,7 +17,7 @@ class App extends Component {
           {/* Users sign up here*/}
           <Route exact path="/signup" render={() => <div>Users sign up here</div>}/>
           {/* Users select roles here*/}
-          <Route exact path="/role-selection" render={() => <div>Users select roles here</div>}/>
+          <Route exact path="/role-selection" component={RoleSelection}/>
           {/* driver enters details and waits here (also gets match notification here): */}
           <Route exact path="/driver-details" render={() => <div>driver enters details and waits here (also gets match notification here)</div>}/>
           {/* passenger enters details and waits here (also gets match notification here): */}
