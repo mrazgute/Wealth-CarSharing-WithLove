@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import 'login.css';
+import '../css/login.css';
+
+import history from '../history';
 
 class Signup extends Component {
   constructor() {
@@ -15,20 +17,32 @@ class Signup extends Component {
     fetch('/api/form-submit-url', {
       method: 'POST',
       body: data,
+    }).then(() => {
+      history.push('/role-selection');
+    }).catch(e => {
+      console.log('error: ', e);
     });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="username">Enter username</label>
-        <input id="username" name="username" type="text" />
+      <div className="tbg">
+        <div className="theader">
 
-        <label htmlFor="password">Enter your password</label>
-        <input id="password" name="password" type="password" />
-
-        <button>Log in</button>
-      </form>
+          <div className="tlogo">
+            <img src="https://worldvectorlogo.com/logos/tinder-1.svg" alt="Tinder Logo" title="Tinder Logo" />
+          </div>
+        </div>
+        <div className="tbgwrap">
+          <div className="login">
+            <form className="login-container" onSubmit={this.handleSubmit}>
+              <p><input type="text" placeholder="Name"/></p>
+              <p><input type="password" placeholder="Password"/></p>
+              <p><input type="submit" value="Log in"/></p>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }
