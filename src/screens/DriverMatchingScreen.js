@@ -34,11 +34,11 @@ class DriverMatchingScreen extends Component {
 
         <div className="tcontrols">
           <div className="tno" onClick={()=>this.handleSelection('NO')}>
-            <img src="/assets/y.PNG" className="ynincon" />
+            <img src="/assets/n.png" className="ynincon" />
           </div>
 
           <div className="tyes" onClick={()=>this.handleSelection('YES')}>
-            <img src="/assets/y.PNG" className="ynincon" />
+            <img src="/assets/y.png" className="ynincon" />
           </div>
         </div>
       </div>
