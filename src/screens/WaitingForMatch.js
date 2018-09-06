@@ -47,21 +47,16 @@ class WaitingForMatch extends Component {
 
   getStatus() {
     // fetch(`http://localhost:5000/${localStorage.getItem('role')}/${localStorage.getItem('userId')}/matches`, {
-    fetch(`${getUrl()}/${localStorage.getItem('role')}/1/matches`, {
+    // fetch(`${getUrl()}/${localStorage.getItem('role')}/1/matches`, {
+    fetch(`${getUrl()}/match/status`, {
       method: 'GET',
     }).then(res => res.json())
-      .then(matches => {
-      console.log('matches: ', matches);
-      localStorage.setItem('matches', JSON.stringify(matches));
-      console.warn('faking SUCESS scenario: ');
-        clearInterval(this.timer);
-        this.timer = null;
-      return setTimeout(() => {
+      .then(data => {
+      if(data.PASSENGER_SAID_YES) {
         this.props.history.push('/driver-matching-screen');
-      }, 3000);
+      }
     }).catch(e => {
       console.log('error: ', e);
-      this.props.history.push('/role-selection');
     });
   }
 

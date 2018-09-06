@@ -10,7 +10,6 @@ class DriverMatchingScreen extends Component {
   handleSelection = (answer) => {
     console.log('driver answered: ', answer);
     if(answer === 'YES') {
-      // fetch('http://localhost:5000/match/driver', {
       fetch(`${getURL()}/match/driver`, {
         method: 'GET',
       }).then(() => this.props.history.push('/match'));
@@ -26,7 +25,6 @@ class DriverMatchingScreen extends Component {
 
         </div>
         <div className="tinfo">
-          <div>{JSON.parse(localStorage.getItem('matches'))[0].name}</div>
           <div>Vieta: <p>Antakalnis</p></div>
           <div>Laikas: <p>17:30</p></div>
         </div>
