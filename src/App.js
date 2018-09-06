@@ -3,12 +3,14 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import RoleSelection from './screens/RoleSelection';
 import MatchingScreen from './screens/MatchingScreen';
 import DriverDetails from './screens/DriverDetails';
+import DriverMatchingScreen from './screens/DriverMatchingScreen';
 import PassengerDetails from './screens/PassengerDetails';
 import WaitingForMatch from './screens/WaitingForMatch';
 import Trips from './screens/Trips';
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import './App.css';
 import Login from './screens/Login';
+import Match from './screens/Match';
 
 
 class App extends Component {
@@ -45,6 +47,8 @@ class App extends Component {
             <Route exact path="/waiting" component={WaitingForMatch} />
 
             <Route exact path="/matching-screen/:id" component={MatchingScreen} />
+            <Route exact path="/driver-matching-screen" component={DriverMatchingScreen} />
+            <Route exact path="/match" component={Match} />
             {/* list of trips matched: */}
             <Route exact path="/trips" component={Trips} />
           </AnimatedSwitch>

@@ -23,7 +23,6 @@ class WaitingForMatch extends Component {
         }).then(res => res.json())
           .then(drivers => {
             localStorage.setItem('drivers', JSON.stringify(drivers));
-
             this.props.history.push(`/matching-screen/0`);
           }).catch(e => {
           console.log('error: ', e);
@@ -44,10 +43,20 @@ class WaitingForMatch extends Component {
   }
 
   getStatus() {
-    fetch(`http://localhost:5000/${localStorage.getItem('role')}/${localStorage.getItem('userId')}/matches`, {
+    // fetch(`http://localhost:5000/${localStorage.getItem('role')}/${localStorage.getItem('userId')}/matches`, {
+    fetch(`http://localhost:5000/${localStorage.getItem('role')}/1/matches`, {
       method: 'GET',
-    }).then((res) => {
-      console.log('matches: ', res);
+    }).then(res => res.json())
+      .then(matches => {
+      console.log('matches: ', matches);
+      // localStorage.setItem('matches', JSON.stringify([{ id: 1, name: 'PASSENGER' }]));
+      localStorage.setItem('matches', JSON.stringify(matches));
+      console.warn('faking SUCESS scenario: ');
+        clearInterval(this.timer);
+        this.timer = null;
+      return setTimeout(() => {
+        this.props.history.push('/driver-matching-screen');
+      }, 3000);
     }).catch(e => {
       console.log('error: ', e);
       this.props.history.push('/role-selection');
