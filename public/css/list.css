@@ -1,0 +1,44 @@
+.list a, .list a:before {
+    transition: all .4s;
+    
+  }
+  .list  div {
+    max-width: 500px;
+    margin: 2em auto;
+  }
+  .list  div:hover a {
+    opacity: .4;
+  }
+  .list a {
+    position: relative;
+    display: block;
+    max-width: 500px;
+    padding: 20px 20px 20px 45px;
+    box-sizing: border-box;
+    color: rgb(119, 119, 119);
+    background: #fAfAfA;
+    text-decoration: none;
+    font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
+  }
+  .list a:before {
+    content: "";
+    position: absolute;
+    left:0; bottom:0; top:0;
+    width: 20px;
+    background: #fa0404;
+  }
+  .list a:nth-child(even):before {
+    background: rgb(255, 187, 0);
+  }
+  .list a + a {
+    border-top: 2px solid #ededed;
+  }
+  .list div a:hover,
+  .list div a:focus {
+    opacity: 1;
+    padding-left: 55px;
+  }
+  .list div a:hover:before,
+  .list div a:focus:before {
+    width: 30px;
+  }
