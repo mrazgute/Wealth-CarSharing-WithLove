@@ -7,19 +7,19 @@
 // AWS Mobile Hub Project Constants
 const awsmobile = {
     'aws_app_analytics': 'enable',
-    'aws_cognito_identity_pool_id': 'us-east-1:2b189791-fc34-4df3-8605-1af84870a8e3',
-    'aws_cognito_region': 'us-east-1',
+    'aws_cognito_identity_pool_id': 'eu-west-1:22b58d05-baf0-4a95-8e9f-e536d7bc0d7c',
+    'aws_cognito_region': 'eu-west-1',
     'aws_content_delivery': 'enable',
-    'aws_content_delivery_bucket': 'wealthloveride-hosting-mobilehub-88811044',
-    'aws_content_delivery_bucket_region': 'us-east-1',
+    'aws_content_delivery_bucket': 'wealthloveride-hosting-mobilehub-1256830693',
+    'aws_content_delivery_bucket_region': 'eu-west-1',
     'aws_content_delivery_cloudfront': 'enable',
-    'aws_content_delivery_cloudfront_domain': 'dyzh2jhfnqhd1.cloudfront.net',
-    'aws_mobile_analytics_app_id': '931fe5b8001440f28512211134a5082c',
+    'aws_content_delivery_cloudfront_domain': 'd541jpwpvub7n.cloudfront.net',
+    'aws_mobile_analytics_app_id': '0b3f74f286804b19af37582ea6e5dee9',
     'aws_mobile_analytics_app_region': 'us-east-1',
-    'aws_project_id': 'ba582282-c00d-48a7-9ce8-3615f2d3a292',
+    'aws_project_id': '633c8495-4f9f-4103-bedd-6cbbc5cdf92a',
     'aws_project_name': 'Wealth.LoveRide',
-    'aws_project_region': 'us-east-1',
-    'aws_resource_name_prefix': 'wealthloveride-mobilehub-88811044',
+    'aws_project_region': 'eu-west-1',
+    'aws_resource_name_prefix': 'wealthloveride-mobilehub-1256830693',
 }
 
 export default awsmobile;
