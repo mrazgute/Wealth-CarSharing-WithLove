@@ -12,8 +12,7 @@ class RoleSelection extends Component {
 	};
 
 	render() {
-		return <React.Fragment>
-			<div className="tbgwrap">
+		return <div><div className="tbgwrap">
 				<center><p>Driver or passenger?</p></center>
 				<div className="selectList">
 					<div className="selectImageLeft" onClick={()=> this.handleRoleSelection('driver')}>
@@ -24,7 +23,7 @@ class RoleSelection extends Component {
 					</div>
 				</div>
 			</div>
-		</React.Fragment>;
+			</div>;
 	}
 }
 
