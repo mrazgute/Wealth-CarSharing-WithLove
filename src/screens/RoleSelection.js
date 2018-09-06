@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import getURL from './../components/getURL';
 
 class RoleSelection extends Component {
 	constructor(props) {
@@ -7,8 +8,16 @@ class RoleSelection extends Component {
 	}
 
 	handleRoleSelection(role) {
-    localStorage.setItem('role', role);
-    this.props.history.push(`${role}-details`);
+		fetch(`${getURL()}/match/${role}/reset/`, {
+      		method: 'GET',
+		}).then(res => res.json())
+		.then(matches => {
+			console.log(`reseted role: ${role}`);
+		}).catch(e => {
+			console.log('error on reset role', e);
+		});
+		localStorage.setItem('role', role);
+		this.props.history.push(`${role}-details`);
 	};
 
 	render() {

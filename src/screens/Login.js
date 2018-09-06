@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/login.css';
+import getURL from './../components/getURL';
 
 class Login extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:5000/login', {
+    fetch(`${getURL()}/login`, {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {

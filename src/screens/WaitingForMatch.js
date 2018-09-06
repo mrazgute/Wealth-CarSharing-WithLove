@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import loader from './../components/loader';
-
+import getUrl from './../components/getURL';
 
 class WaitingForMatch extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class WaitingForMatch extends Component {
       }
       const drivers = JSON.parse(localStorage.getItem('drivers'));
       if (!drivers || !drivers.length ) {
-        fetch(`http://localhost:5000/drivers`, {
+        fetch(`${getUrl()}/drivers`, {
           method: 'GET',
         }).then(res => res.json())
           .then(drivers => {
@@ -47,7 +47,7 @@ class WaitingForMatch extends Component {
 
   getStatus() {
     // fetch(`http://localhost:5000/${localStorage.getItem('role')}/${localStorage.getItem('userId')}/matches`, {
-    fetch(`http://localhost:5000/${localStorage.getItem('role')}/1/matches`, {
+    fetch(`${getUrl()}/${localStorage.getItem('role')}/1/matches`, {
       method: 'GET',
     }).then(res => res.json())
       .then(matches => {
