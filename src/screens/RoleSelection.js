@@ -7,8 +7,16 @@ class RoleSelection extends Component {
 	}
 
 	handleRoleSelection(role) {
-    localStorage.setItem('role', role);
-    this.props.history.push(`${role}-details`);
+		fetch(`http://localhost:5000/match/${role}/reset/`, {
+      		method: 'GET',
+		}).then(res => res.json())
+		.then(matches => {
+			console.log(`reseted role: ${role}`);
+		}).catch(e => {
+			console.log('error on reset role', e);
+		});
+		localStorage.setItem('role', role);
+		this.props.history.push(`${role}-details`);
 	};
 
 	render() {
