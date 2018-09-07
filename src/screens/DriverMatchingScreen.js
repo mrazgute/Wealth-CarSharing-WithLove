@@ -22,8 +22,8 @@ class DriverMatchingScreen extends Component {
         <div className="tphoto">
 
           {localStorage.getItem('role') === 'passenger' ?
-            <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" /> :
-            <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" />
+            <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" heigth="100%" width="100%" /> :
+            <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" heigth="100%" width="100%" />
           }
 
         </div>
@@ -34,11 +34,11 @@ class DriverMatchingScreen extends Component {
 
         <div className="tcontrols">
           <div className="tno" onClick={()=>this.handleSelection('NO')}>
-            <img src="/assets/y.PNG" className="ynincon" />
+            <img src="/assets/n.png" className="ynincon" />
           </div>
 
           <div className="tyes" onClick={()=>this.handleSelection('YES')}>
-            <img src="/assets/y.PNG" className="ynincon" />
+            <img src="/assets/y.png" className="ynincon" />
           </div>
         </div>
       </div>

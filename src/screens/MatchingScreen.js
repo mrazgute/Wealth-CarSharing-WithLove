@@ -30,8 +30,8 @@ class MatchingScreen extends Component {
         const drivers = JSON.parse(localStorage.getItem('drivers'));
         console.log('drivers', drivers);
         const driverPic = JSON.parse(localStorage.getItem('drivers'))[0].id === 1 ?
-        <img src="/assets/winner-man.jpeg" title="tphoto" alt="Tinder Photo" /> :
-        <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" />
+        <img src="/assets/winner-man.jpeg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%" /> :
+        <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%" />
         if (drivers.length) {
         return <React.Fragment>
             <div className="tbgwrap">
@@ -49,11 +49,11 @@ class MatchingScreen extends Component {
 
                 <div className="tcontrols">
                     <div className="tno" onClick={()=>this.handleSelection('NO')}>
-                        <img src="/assets/n.PNG" className="ynincon" />
+                        <img src="/assets/n.png" className="ynincon" />
                     </div>
 
                     <div className="tyes" onClick={()=>this.handleSelection('YES')}>
-                        <img src="/assets/y.PNG" className="ynincon" />
+                        <img src="/assets/y.png" className="ynincon" />
                     </div>
                 </div>
             </div>
