@@ -23,7 +23,7 @@ class DriverMatchingScreen extends Component {
 
           {localStorage.getItem('role') === 'passenger' ?
             <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" heigth="100%" width="100%" /> :
-            <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" heigth="100%" width="100%" />
+            <img src="/assets/women.jpg" style={{width: '500px'}} title="tphoto" alt="Tinder Photo" heigth="100%" width="100%" />
           }
 
         </div>

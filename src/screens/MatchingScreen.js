@@ -30,15 +30,15 @@ class MatchingScreen extends Component {
         const drivers = JSON.parse(localStorage.getItem('drivers'));
         console.log('drivers', drivers);
         const driverPic = JSON.parse(localStorage.getItem('drivers'))[0].id === 1 ?
-        <img src="/assets/winner-man.jpeg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%" /> :
-        <img src="/assets/man.jpg" title="tphoto" alt="Tinder Photo" width="100%" heigth="100%" />
+        <img src="/assets/winner-man.jpeg" style={{width: '500px'}} title="tphoto" alt="Tinder Photo" /> :
+        <img src="/assets/man.jpg" style={{width: '500px'}} title="tphoto" alt="Tinder Photo" />
         if (drivers.length) {
         return <React.Fragment>
             <div className="tbgwrap">
                 <div className="tphoto">
                   {localStorage.getItem('role') === 'passenger' ?
                     driverPic :
-                    <img src="/assets/women.jpg" title="tphoto" alt="Tinder Photo" />
+                    <img src="/assets/women.jpg" style={{width: '500px'}} title="tphoto" alt="Tinder Photo" />
                   }
                 </div>
                 <div className="tinfo">
