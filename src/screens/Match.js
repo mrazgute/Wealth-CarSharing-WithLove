@@ -10,7 +10,11 @@ class Match extends Component {
           <div className="mtext">Let's ride!</div>
           <div className="m1"><img src="../assets/man.jpg" /></div>
           <div className="m2"><img src="../assets/women.jpg" /></div>
-          <div className="sendmsg"><i className="fa fa-phone" aria-hidden="true"></i>877324234</div>
+          {
+            localStorage.getItem('role') === 'passenger' ?
+            <div className="sendmsg"><i className="fa fa-phone" aria-hidden="true"></i>877324234</div> :
+            null
+          }
         </div>
         <div className="theader-match">
           <i className="fa fa-cog" aria-hidden="true"></i>
