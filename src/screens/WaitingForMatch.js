@@ -18,6 +18,7 @@ class WaitingForMatch extends Component {
       // TODO: if passenger said yes, they should be polling
       if(localStorage.getItem('passengerYes')) {
         this.passengerTimer = setInterval(()=> this.getPassengerStatus(), 1000);
+        return;
       }
       const drivers = JSON.parse(localStorage.getItem('drivers'));
       if (!drivers || !drivers.length ) {
