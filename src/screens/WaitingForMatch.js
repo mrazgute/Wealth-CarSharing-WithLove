@@ -31,7 +31,7 @@ class WaitingForMatch extends Component {
           console.log('error: ', e);
         });
       } else {
-        setTimeout(() => {
+        this.elseTimeout = setTimeout(() => {
           this.props.history.push('/matching-screen/0');
         }, 10000);
       }
@@ -41,7 +41,13 @@ class WaitingForMatch extends Component {
   componentWillUnmount() {
     if(localStorage.getItem('role') === 'driver') {
       clearInterval(this.timer);
-      this.timer = null; // here...
+      this.timer = null;
+    }
+    if(localStorage.getItem('role') === 'passenger') {
+      clearInterval(this.passengerTimer);
+      this.passengerTimer = null;
+      clearTimeout(this.elseTimeout);
+      this.elseTimeout = null;
     }
   }
 
